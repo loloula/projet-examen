@@ -1,0 +1,8 @@
+blog_homepage:
+    path:     /
+    defaults: { _controller: BlogBundle:Default:index }
+
+
+blog_user:
+    path:     /articles
+    defaults: { _controller: BlogBundle:User:index }

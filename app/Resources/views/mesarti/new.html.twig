@@ -1,0 +1,16 @@
+{% extends 'basemesnew.html.twig' %}
+
+{% block body %}
+    <h1>creation d'article</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}<p> </p>
+        <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Creer" />
+    {{ form_end(form) }}
+  <p> </p>
+    <ul>
+        <li>
+            <a class="btn btn-primary btn-lg" href="{{ path('mesarti_index') }}">affiche la liste des articles</a>
+        </li>
+    </ul>
+{% endblock %}

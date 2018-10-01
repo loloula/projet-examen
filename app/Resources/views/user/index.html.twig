@@ -1,0 +1,38 @@
+{% extends 'baseinduser.html.twig' %}
+
+{% block body %}
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Prenom</th>
+                <th>Nom</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
+                <td>{{ user.prenom }}</td>
+                <td>{{ user.nom }}</td>
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li><p>
+
+
+
+        </p>
+            <a class="btn btn-primary btn-lg" href="{{ path('user_new') }}">Create a new user</a>
+        </li>
+    </ul>
+{% endblock %}

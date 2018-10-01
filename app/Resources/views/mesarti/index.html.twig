@@ -1,0 +1,59 @@
+{% extends 'basemesarind.html.twig' %}
+
+{% block body %}
+    <h1>LA LISTE DES ARTICLES</h1>
+
+    <table>
+
+      <tbody>
+        {% for mesarti in mesartis %}
+
+            <tr>
+                <th>Id</th>
+                <td><a href="{{ path('mesarti_show', { 'id': mesarti.id }) }}">{{ mesarti.id }}</a></td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ mesarti.title }}</td>
+            </tr>
+
+            <tr>
+                <th>Etatdepublication</th>
+                <td>{{ mesarti.etatdepublication }}</td>
+            </tr>
+            <tr>
+                <th>Categorie</th>
+                <td>{{ mesarti.categorie }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ mesarti.image }}</td>
+            </tr>
+            <tr>
+                <th>Createdat</th>
+                <td>{% if mesarti.createdAt %}{{ mesarti.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('mesarti_show', { 'id': mesarti.id }) }}">lire la suite</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('mesarti_edit', { 'id': mesarti.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+    <ul>
+        <li>
+            <a class="btn btn-primary btn-lg" href="{{ path('mesarti_new') }}">Creer un nouveau article</a>
+        </li>
+    </ul>
+{% endblock %}

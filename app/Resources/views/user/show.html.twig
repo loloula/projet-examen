@@ -1,0 +1,49 @@
+{% extends 'baseshuser.html.twig' %}
+
+{% block body %}
+
+    <p>   INSCRIPTION REUSSI VEUILLEZ VOUS CONNECTER POUR POUVOIR CREER DES ARTICLES</p>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ user.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ user.nom }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ user.password }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ user.telephone }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+        cliquer ici <a class="btn btn-primary btn-lg" href="{{ path('user_index') }}">Back to the list</a> pour voir les autres membres du blog
+        </li><p></p>
+        <li>
+        cliquer ici    <a class="btn btn-primary btn-lg" href="{{ path('user_edit', { 'id': user.id }) }}">Edit</a> si vous voulez modifié vos informations
+        </li>
+        <li>
+        cliquer ici     {{ form_start(delete_form) }}
+                <input class="btn btn-outline-success my-2 my-sm-0"  type="submit" value="Delete">
+            {{ form_end(delete_form) }} si vous voulez supprimer votre inscription
+        </li>
+    </ul>
+{% endblock %}

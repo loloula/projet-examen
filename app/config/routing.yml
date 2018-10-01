@@ -1,0 +1,16 @@
+blog_mesarti:
+    resource: "@BlogBundle/Controller/MesartiController.php"
+    type:     annotation
+
+blog_user:
+    resource: "@BlogBundle/Controller/UserController.php"
+    type:     annotation
+
+
+blog:
+    resource: "@BlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

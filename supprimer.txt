@@ -1,0 +1,23 @@
+ user/new <ul>
+        <li>
+            <a href="{{ path('user_index') }}">Back to the list</a>
+        </li>
+    </ul>*/
+
+
+
+
+  <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+
+                <th>Etatdepublication</th>
+
+                <th>Categorie</th>
+                
+                <th>Image</th>
+                <th>Createdat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
